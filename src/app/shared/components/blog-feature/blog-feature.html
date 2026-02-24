@@ -1,0 +1,15 @@
+<section class="blog">
+  <div class="blog__container">
+    <h2 class="blog__section-title">From The Blog</h2>
+    <div class="blog__featured">
+      <div class="blog__image-wrap">
+        <img [src]="image()" alt="Blog post" class="blog__image" />
+      </div>
+      <div class="blog__content">
+        <h3 class="blog__title">{{ title() }}</h3>
+        <p class="blog__desc">{{ description() }}</p>
+        <app-button variant="outline" size="md">{{ ctaLabel() }}</app-button>
+      </div>
+    </div>
+  </div>
+</section>

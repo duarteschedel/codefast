@@ -1,0 +1,36 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: inline-block;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  height: 57px;
+  padding: $space-3 $space-5 $space-3 $space-3;
+  border: 1px solid $color-dark;
+  border-radius: $radius-full;
+  background: transparent;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  font-family: $font-sans;
+  letter-spacing: 1px;
+  color: $color-dark;
+  cursor: pointer;
+  transition: background $transition-fast;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba($color-dark, 0.05);
+  }
+
+  &__dot {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba($color-black, 0.1);
+  }
+}

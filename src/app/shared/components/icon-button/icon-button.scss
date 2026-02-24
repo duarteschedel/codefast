@@ -1,0 +1,53 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+:host {
+  display: inline-block;
+}
+
+.icon-btn {
+  @include flex-center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  // Sizes
+  &--sm {
+    width: 40px;
+    height: 40px;
+  }
+
+  &--lg {
+    width: 50px;
+    height: 50px;
+  }
+
+  // Variants
+  &--dark {
+    background: rgba($color-dark, 0.2);
+    color: $color-white;
+
+    &:hover {
+      background: rgba($color-dark, 0.4);
+    }
+  }
+
+  &--light {
+    background: $color-white;
+    color: $color-dark;
+  }
+
+  // Active state (for wishlist hearts)
+  &--active.icon-btn--dark {
+    background: $color-love;
+
+    &:hover {
+      background: #d43d3d;
+    }
+  }
+}

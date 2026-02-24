@@ -1,0 +1,52 @@
+<div class="top-bar">
+  <div class="top-bar__container">
+    <div class="top-bar__left">
+      <a href="#" class="top-bar__link">English</a>
+      <a href="#" class="top-bar__link">Dollar</a>
+    </div>
+    <nav class="top-bar__right">
+      <a href="#" class="top-bar__link">Tracking Package</a>
+      <a href="#" class="top-bar__link">FAQ</a>
+      <a href="#" class="top-bar__link">About Us</a>
+      <a href="#" class="top-bar__link">Contact Us</a>
+    </nav>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header__container">
+    <a routerLink="/home" class="header__logo">ECOMMERCE</a>
+
+    <div class="header__center">
+      <div class="header__search">
+        <input type="text" class="header__search-input" placeholder="Search here" />
+        <app-icon name="search" size="sm" />
+      </div>
+
+      <nav class="header__nav">
+        <a href="#" class="header__nav-link header__nav-link--dropdown">
+          All Category
+          <app-icon name="chevron-down" size="sm" />
+        </a>
+        <a href="#" class="header__nav-link">Gift Cards</a>
+        <a href="#" class="header__nav-link">Special Event</a>
+      </nav>
+    </div>
+
+    <div class="header__actions">
+      <button class="header__action-btn" aria-label="Wishlist">
+        <app-icon name="heart" size="md" />
+      </button>
+      <button class="header__action-btn" aria-label="Account">
+        <app-icon name="user" size="md" />
+      </button>
+      <button class="header__action-btn" aria-label="Cart">
+        <app-icon name="cart" size="md" />
+      </button>
+    </div>
+
+    <button class="header__mobile-toggle" aria-label="Menu">
+      <app-icon name="menu" size="md" />
+    </button>
+  </div>
+</header>

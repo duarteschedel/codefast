@@ -1,0 +1,14 @@
+<section class="testimonial">
+  <div class="testimonial__card">
+    <img [src]="backgroundImage()" alt="Testimonial background" class="testimonial__bg" />
+    <div class="testimonial__overlay">
+      <p class="testimonial__label">What people said</p>
+      <blockquote class="testimonial__quote">{{ quote() }}</blockquote>
+      <p class="testimonial__text">{{ text() }}</p>
+      <div class="testimonial__author">
+        <span class="testimonial__name">{{ authorName() }}</span>
+        <span class="testimonial__role">{{ authorRole() }}</span>
+      </div>
+    </div>
+  </div>
+</section>

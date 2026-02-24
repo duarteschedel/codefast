@@ -1,0 +1,79 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: inline-block;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  font-family: $font-sans;
+  font-weight: $font-medium;
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  cursor: pointer;
+  border: 1px solid transparent;
+  letter-spacing: 1px;
+
+  &:focus-visible {
+    outline: 2px solid $color-dark;
+    outline-offset: 2px;
+  }
+
+  // Variants
+  &--primary {
+    background-color: $color-dark;
+    color: $color-white;
+
+    &:hover:not(.btn--disabled) {
+      background-color: #2c2c2c;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-white;
+
+    &:hover:not(.btn--disabled) {
+      background-color: $color-secondary-dark;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $color-dark;
+    border-color: $color-dark;
+
+    &:hover:not(.btn--disabled) {
+      background-color: rgba($color-dark, 0.05);
+    }
+  }
+
+  // Sizes
+  &--sm {
+    padding: $space-1 $space-4;
+    font-size: $text-sm;
+    height: 36px;
+  }
+
+  &--md {
+    padding: $space-2 $space-6;
+    font-size: $text-sm;
+    height: 44px;
+  }
+
+  &--lg {
+    padding: $space-3 $space-8;
+    font-size: $text-sm;
+    height: 50px;
+    min-width: 170px;
+  }
+
+  // Disabled
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

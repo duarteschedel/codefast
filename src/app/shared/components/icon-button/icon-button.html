@@ -1,0 +1,7 @@
+<button
+  [class]="'icon-btn icon-btn--' + size() + ' icon-btn--' + variant()"
+  [class.icon-btn--active]="active()"
+  [attr.aria-label]="ariaLabel()"
+>
+  <app-icon [name]="icon()" [size]="size() === 'lg' ? 'lg' : 'sm'" />
+</button>

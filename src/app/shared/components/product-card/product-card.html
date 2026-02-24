@@ -1,0 +1,14 @@
+<div class="product">
+  <div class="product__image-wrap">
+    <img [src]="image()" [alt]="name()" class="product__img" />
+    <app-icon-button
+      [icon]="loved() ? 'heart-fill' : 'heart'"
+      size="sm"
+      variant="dark"
+      [active]="loved()"
+      [ariaLabel]="loved() ? 'Remove from wishlist' : 'Add to wishlist'"
+    />
+  </div>
+  <h3 class="product__name">{{ name() }}</h3>
+  <p class="product__price">{{ price() }}</p>
+</div>

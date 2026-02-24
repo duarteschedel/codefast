@@ -1,0 +1,42 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+:host {
+  display: block;
+  flex: 1;
+  max-width: 410px;
+}
+
+.feature {
+  &__icon-wrap {
+    @include flex-center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: $color-dark;
+    color: $color-white;
+    margin-bottom: $space-6;
+
+    app-icon {
+      transform: scale(2);
+    }
+  }
+
+  &__title {
+    font-size: $text-3xl;
+    font-weight: $font-medium;
+    line-height: 40px;
+    letter-spacing: -1px;
+    color: $color-dark;
+    margin-bottom: $space-1;
+  }
+
+  &__desc {
+    font-size: $text-lg;
+    font-weight: $font-regular;
+    line-height: 26px;
+    letter-spacing: -0.3px;
+    color: $color-dark;
+    opacity: 0.8;
+  }
+}

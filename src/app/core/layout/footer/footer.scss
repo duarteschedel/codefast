@@ -1,0 +1,144 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.footer {
+  background-color: $color-dark;
+  color: $color-white;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 60px;
+    gap: $space-8;
+
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__left {
+    @include flex-column;
+    gap: $space-6;
+    flex-shrink: 0;
+    padding-top: 0;
+  }
+
+  &__brand {
+    @include flex-column;
+    gap: $space-3;
+    max-width: 290px;
+  }
+
+  &__logo {
+    font-size: $text-2xl;
+    font-weight: 800;
+    line-height: 30px;
+  }
+
+  &__desc {
+    font-size: $text-sm;
+    line-height: 22px;
+    color: $color-white;
+    opacity: 0.52;
+  }
+
+  &__subscribe {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  &__input-wrap {
+    border: 1px solid rgba($color-white, 0.52);
+    border-radius: $radius-full;
+    padding: 12px 24px;
+    width: 250px;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $color-white;
+    font-size: 13px;
+    font-family: $font-sans;
+    width: 100%;
+    opacity: 0.52;
+
+    &::placeholder {
+      color: $color-white;
+      opacity: 1;
+    }
+  }
+
+  &__submit-btn {
+    background-color: $color-white;
+    color: $color-dark;
+    border: none;
+    border-radius: $radius-full;
+    padding: 12px 30px;
+    font-size: 13px;
+    font-weight: $font-semibold;
+    font-family: $font-sans;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity $transition-fast;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__links-grid {
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+    flex: 1;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: $space-8;
+    }
+  }
+
+  &__links {
+    min-width: 0;
+  }
+
+  &__links-title {
+    font-size: 11px;
+    font-weight: $font-semibold;
+    letter-spacing: 1px;
+    color: $color-white;
+    margin-bottom: $space-4;
+    line-height: 16px;
+  }
+
+  &__links-list {
+    @include flex-column;
+    gap: $space-4;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      font-size: 13px;
+      font-weight: $font-medium;
+      color: $color-white;
+      opacity: 0.52;
+      text-decoration: none;
+      line-height: 16px;
+      transition: opacity $transition-fast;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

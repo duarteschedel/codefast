@@ -1,0 +1,35 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: inline-block;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $space-1 $space-2;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  border-radius: $radius-full;
+  line-height: 1;
+
+  &--default {
+    background-color: $color-gray-100;
+    color: $color-gray-700;
+  }
+
+  &--success {
+    background-color: #dcfce7;
+    color: $color-success;
+  }
+
+  &--warning {
+    background-color: #fef3c7;
+    color: $color-warning;
+  }
+
+  &--error {
+    background-color: #fee2e2;
+    color: $color-error;
+  }
+}

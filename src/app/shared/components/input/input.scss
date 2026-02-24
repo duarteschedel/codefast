@@ -1,0 +1,38 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  &__label {
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: $color-gray-700;
+  }
+
+  &__field {
+    width: 100%;
+    padding: $space-2 $space-3;
+    font-size: $text-base;
+    color: $color-gray-900;
+    background-color: $color-white;
+    border: 1px solid $color-gray-300;
+    border-radius: $radius-md;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &::placeholder {
+      color: $color-gray-400;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    }
+  }
+}

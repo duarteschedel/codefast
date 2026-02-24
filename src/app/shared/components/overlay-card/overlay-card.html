@@ -1,0 +1,14 @@
+<div
+  [class]="'overlay-card overlay-card--' + overlayPosition()"
+  [style.height]="height()"
+>
+  <img [src]="image()" [alt]="label()" class="overlay-card__img" />
+  @if (overlayPosition() === 'top') {
+    <span class="overlay-card__label" [innerHTML]="label()"></span>
+  } @else {
+    <div class="overlay-card__footer">
+      <span class="overlay-card__label" [innerHTML]="label()"></span>
+      <ng-content />
+    </div>
+  }
+</div>

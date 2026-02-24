@@ -1,0 +1,23 @@
+<section class="trending">
+  <div class="trending__container">
+    <div class="trending__header">
+      <h2 class="trending__title">{{ title() }}</h2>
+      <div class="trending__filters">
+        @for (filter of filters(); track filter.label) {
+          <app-filter-chip [label]="filter.label" [active]="filter.active" />
+        }
+      </div>
+    </div>
+
+    <div class="trending__grid">
+      @for (product of products(); track product.name) {
+        <app-product-card
+          [name]="product.name"
+          [price]="product.price"
+          [image]="product.image"
+          [loved]="product.loved"
+        />
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__main-card">
+      <img [src]="mainImage()" alt="" class="hero__main-img" />
+      <div class="hero__main-overlay">
+        <h1 class="hero__title" [innerHTML]="title()"></h1>
+        <p class="hero__subtitle">{{ subtitle() }}</p>
+        <app-button variant="primary" size="lg">{{ ctaLabel() }}</app-button>
+      </div>
+    </div>
+
+    <div class="hero__side-cards">
+      @for (card of sideCards(); track card.label) {
+        <app-overlay-card
+          [image]="card.image"
+          [label]="card.label"
+          overlayPosition="top"
+          height="380px"
+        />
+      }
+    </div>
+  </div>
+</section>

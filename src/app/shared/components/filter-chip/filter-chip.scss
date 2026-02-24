@@ -1,0 +1,34 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: inline-block;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding-inline: $space-6;
+  border-radius: $radius-full;
+  border: 1px solid #ddd;
+  background: transparent;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  font-family: $font-sans;
+  letter-spacing: 1px;
+  color: rgba($color-dark, 0.8);
+  cursor: pointer;
+  transition: all $transition-fast;
+  white-space: nowrap;
+
+  &:hover {
+    border-color: $color-dark;
+  }
+
+  &--active {
+    background-color: $color-dark;
+    border-color: $color-dark;
+    color: $color-white;
+  }
+}

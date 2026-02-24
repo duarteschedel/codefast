@@ -1,0 +1,53 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: block;
+  flex: 1;
+}
+
+.overlay-card {
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+
+  // Top overlay (hero side cards)
+  &--top &__label {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 30px;
+    font-size: 40px;
+    font-weight: $font-regular;
+    line-height: 40px;
+    letter-spacing: -3px;
+    color: $color-dark;
+  }
+
+  // Bottom overlay (inspiration cards)
+  &--bottom &__footer {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    z-index: 1;
+  }
+
+  &--bottom &__label {
+    font-size: 40px;
+    font-weight: $font-regular;
+    line-height: 40px;
+    letter-spacing: -3px;
+    color: $color-white;
+  }
+}
