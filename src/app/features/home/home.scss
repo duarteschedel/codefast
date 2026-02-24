@@ -1,0 +1,103 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+// Casual Inspirations Section
+.home-inspirations {
+  padding-inline: 60px;
+  border-top: 1px solid rgba($color-black, 0.1);
+
+  &__content {
+    display: flex;
+    gap: $space-3;
+    align-items: center;
+    padding-block: $space-8;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space-10;
+    width: 411px;
+    padding-inline: 0;
+  }
+
+  &__title {
+    font-size: $text-7xl;
+    font-weight: $font-regular;
+    line-height: $text-7xl;
+    letter-spacing: -4px;
+    color: $color-dark;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: $text-lg;
+    font-weight: $font-regular;
+    line-height: 26px;
+    letter-spacing: -0.3px;
+    color: $color-dark;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  &__cards {
+    display: flex;
+    gap: $space-3;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+// Explore by Colors Section
+.home-colors {
+  padding-inline: 60px;
+  padding-block: $space-10;
+  border-top: 1px solid rgba($color-black, 0.1);
+  display: flex;
+  gap: 100px;
+  align-items: center;
+
+  &__title {
+    font-size: $text-6xl;
+    font-weight: $font-regular;
+    line-height: $text-7xl;
+    letter-spacing: -3px;
+    color: $color-dark;
+    margin: 0;
+    width: 256px;
+  }
+
+  &__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    flex: 1;
+  }
+}
+
+// Service Features Section
+.home-services {
+  padding-inline: 60px;
+  padding-block: $space-10;
+  border-top: 1px solid rgba($color-black, 0.1);
+
+  &__title {
+    font-size: $text-6xl;
+    font-weight: $font-regular;
+    line-height: $text-7xl;
+    letter-spacing: -3px;
+    color: $color-dark;
+    margin: 0;
+    margin-bottom: $space-16;
+  }
+
+  &__features {
+    display: flex;
+    gap: 45px;
+    align-items: flex-start;
+  }
+}
