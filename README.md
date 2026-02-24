@@ -15,7 +15,7 @@ Workshop hands-on para converter designs Figma em codigo Angular usando GitHub C
 
 ```bash
 git clone <repo-url>
-cd figma2code-workshop
+cd codefast
 ```
 
 ### 2. Abrir o design no Figma
