@@ -29,21 +29,7 @@ Convert the design context into Angular code following the project conventions b
 
 ### Step 4 — Verify
 
-After generating code, verify both compilation and visual output:
-
-1. **Build check** — Run `npx ng build` and confirm zero errors.
-2. **Visual check** — Use the Playwright MCP tools to visually verify the result:
-   a. Run `npx ng serve` in the background (if not already running)
-   b. Navigate to `http://localhost:4200` using `browser_navigate`
-   c. Take a full-page screenshot using `browser_take_screenshot` with `fullPage: true`
-   d. Compare the screenshot against the Figma design. Check for:
-      - Missing or misplaced sections
-      - Wrong typography (size, weight, spacing)
-      - Incorrect colors or opacity
-      - Broken images or layout gaps
-      - Missing interactive elements (buttons, icons, hearts)
-   e. If the design context was fetched via Figma MCP (Step 1, Path A), use `get_screenshot` to get the Figma screenshot and compare side by side
-3. **Fix issues** — If the visual check reveals discrepancies, fix the code and re-verify.
+Run `npx ng build` and confirm zero errors.
 
 ## Project Architecture
 
@@ -379,4 +365,4 @@ Font weights: `$font-regular` (400), `$font-medium` (500), `$font-semibold` (600
 7. **New components** — if a Figma element doesn't match any existing component, create a new one under `src/app/shared/components/` following the same conventions and add a `@atomic` JSDoc tag.
 8. **Never modify** existing shared component implementations. Create new components instead.
 9. **Overlay cards need flex-grow** — When placing `app-overlay-card` inside a flex container, the container **MUST** have `flex: 1; min-width: 0;`. Overlay card images are absolutely positioned, so they provide zero intrinsic width. Without `flex: 1` on the parent, the cards collapse to 0px and become invisible.
-10. **Verification** — after generating code, run `npx ng build` to verify zero errors, then use Playwright to take a full-page screenshot and visually compare against the Figma design.
+10. **Verification** — after generating code, run `npx ng build` to verify zero errors.
