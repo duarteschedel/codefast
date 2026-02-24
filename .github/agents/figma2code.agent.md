@@ -27,6 +27,10 @@ Analyze the Figma design output and map every visual element to the design syste
 
 Convert the design context into Angular code following the project conventions below. The MCP output is React+Tailwind — you must convert it to Angular templates + SCSS using the design system components and tokens. Always create complete, buildable files.
 
+### Step 4 — Verify
+
+Run `npx ng build` and confirm zero errors.
+
 ## Project Architecture
 
 ```
@@ -180,6 +184,18 @@ Color swatch button with colored dot and label.
 
 #### OverlayCard (`app-overlay-card`)
 Image card with text label overlay. Supports content projection for bottom-positioned overlays.
+
+**CRITICAL — Flex Container Requirement:** OverlayCard images use `position: absolute` with `inset: 0`, so they provide **zero intrinsic width**. The parent flex container holding overlay cards **MUST** have `flex: 1; min-width: 0;` to fill available space, otherwise cards collapse to 0px width and become invisible. Example:
+```scss
+// CORRECT — parent container for overlay cards
+&-cards {
+  display: flex;
+  gap: $space-3;
+  flex: 1;       // REQUIRED — fills remaining space
+  min-width: 0;  // REQUIRED — prevents flex overflow
+}
+```
+
 ```html
 <!-- Top overlay (hero side cards) -->
 <app-overlay-card image="hero-side.png" label="Outdoor<br>Active" overlayPosition="top" height="380px" />
@@ -348,4 +364,5 @@ Font weights: `$font-regular` (400), `$font-medium` (500), `$font-semibold` (600
 6. **Data arrays** belong in the `.ts` component class, iterated with `@for` in templates.
 7. **New components** — if a Figma element doesn't match any existing component, create a new one under `src/app/shared/components/` following the same conventions and add a `@atomic` JSDoc tag.
 8. **Never modify** existing shared component implementations. Create new components instead.
-9. **Build verification** — after generating code, run `npx ng build` to verify zero errors.
+9. **Overlay cards need flex-grow** — When placing `app-overlay-card` inside a flex container, the container **MUST** have `flex: 1; min-width: 0;`. Overlay card images are absolutely positioned, so they provide zero intrinsic width. Without `flex: 1` on the parent, the cards collapse to 0px and become invisible.
+10. **Verification** — after generating code, run `npx ng build` to verify zero errors.

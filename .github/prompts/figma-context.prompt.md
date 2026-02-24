@@ -11,3 +11,5 @@ These files contain the real Figma MCP output: node structure, design specs, typ
 Image assets are already saved in public/images/.
 
 Implement the home page in src/app/features/home/ using the existing design system components. Reference images as `images/filename.png`.
+
+After implementation, run `npx ng build` to verify zero errors.

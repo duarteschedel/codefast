@@ -100,6 +100,30 @@
 </frame>
 ```
 
+## Key Design Specs
+
+### Hero Banner
+- **Container:** flex row, gap 10px, padding-inline 60px
+- **Main card:** flex 1, min-height 770px, rounded, overflow hidden, image covers full area
+- **Overlay:** padding 60px, flex-column, gap 28px, positioned relative above the image
+- **Title:** Inter Regular 90px, white, line-height 75px, letter-spacing -5px
+- **Subtitle:** Inter Regular 18px, white, opacity 0.8, max-width 328px
+- **CTA:** primary button, large size, text "VIEW COLLECTIONS"
+- **Side cards column:** width 352px, flex-column, gap 10px, two cards 380px tall each
+- **Side card labels:** 40px Inter Regular, color #121212, padding 30px, positioned top-left
+
+### Casual Inspirations
+- **Layout:** flex row, space-between, align stretch, padding-inline 60px
+- **Text column:** width 411px, flex-column, gap 40px, centered vertically
+- **Title:** Inter Regular 65px, line-height 65px, letter-spacing -4px, color #121212
+- **Description:** Inter Regular 18px, line-height 26px, opacity 0.8
+- **CTA:** outline button, large size, text "BROWSE INSPIRATIONS"
+- **Cards column:** `flex: 1` (CRITICAL — must fill remaining width), display flex, gap 10px
+- **Each card:** flex 1 (shares space equally), height 380px, rounded, overflow hidden, image covers full area via position absolute
+- **Card footer:** positioned absolute at bottom-left (30px inset), flex row, space-between
+- **Card label:** 40px Inter Regular, white, line-height 40px
+- **Arrow button:** 50px circle, white background, dark icon (arrow-up-right)
+
 ## MCP Generated Code (React + Tailwind — must be converted to Angular)
 
 ```tsx

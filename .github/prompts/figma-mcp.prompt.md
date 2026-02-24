@@ -10,3 +10,5 @@ Use get_screenshot and get_design_context on each section node with:
 If the full page is too large, use get_metadata first to get the node tree, then call get_design_context on each child section individually.
 
 Then implement the screen in src/app/features/home/ using the existing design system components. Reference images as `images/filename.png`.
+
+After implementation, run `npx ng build` to verify zero errors.
