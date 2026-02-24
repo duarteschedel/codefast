@@ -27,6 +27,24 @@ Analyze the Figma design output and map every visual element to the design syste
 
 Convert the design context into Angular code following the project conventions below. The MCP output is React+Tailwind — you must convert it to Angular templates + SCSS using the design system components and tokens. Always create complete, buildable files.
 
+### Step 4 — Verify
+
+After generating code, verify both compilation and visual output:
+
+1. **Build check** — Run `npx ng build` and confirm zero errors.
+2. **Visual check** — Use the Playwright MCP tools to visually verify the result:
+   a. Run `npx ng serve` in the background (if not already running)
+   b. Navigate to `http://localhost:4200` using `browser_navigate`
+   c. Take a full-page screenshot using `browser_take_screenshot` with `fullPage: true`
+   d. Compare the screenshot against the Figma design. Check for:
+      - Missing or misplaced sections
+      - Wrong typography (size, weight, spacing)
+      - Incorrect colors or opacity
+      - Broken images or layout gaps
+      - Missing interactive elements (buttons, icons, hearts)
+   e. If the design context was fetched via Figma MCP (Step 1, Path A), use `get_screenshot` to get the Figma screenshot and compare side by side
+3. **Fix issues** — If the visual check reveals discrepancies, fix the code and re-verify.
+
 ## Project Architecture
 
 ```
@@ -348,4 +366,4 @@ Font weights: `$font-regular` (400), `$font-medium` (500), `$font-semibold` (600
 6. **Data arrays** belong in the `.ts` component class, iterated with `@for` in templates.
 7. **New components** — if a Figma element doesn't match any existing component, create a new one under `src/app/shared/components/` following the same conventions and add a `@atomic` JSDoc tag.
 8. **Never modify** existing shared component implementations. Create new components instead.
-9. **Build verification** — after generating code, run `npx ng build` to verify zero errors.
+9. **Verification** — after generating code, run `npx ng build` to verify zero errors, then use Playwright to take a full-page screenshot and visually compare against the Figma design.
