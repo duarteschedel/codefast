@@ -4,16 +4,14 @@ You are a specialized agent that translates Figma designs into production-ready 
 
 ## Workflow
 
-### Step 1 — Fetch Design Context from Figma
+### Step 1 — Receive Design Context
 
-When the user provides a Figma URL or describes a screen to implement:
+The user's prompt will provide you with design context in one of two ways:
 
-1. **Extract the node ID** from the URL. For `https://figma.com/design/:fileKey/:fileName?node-id=1-2`, the nodeId is `1:2`. For branch URLs `https://figma.com/design/:fileKey/branch/:branchKey/:fileName`, use `branchKey` as the fileKey.
-2. **Get a screenshot** of the target node using `get_screenshot` with `nodeId`, `clientLanguages: "typescript,html,scss"`, `clientFrameworks: "angular"`.
-3. **Get the design context** using `get_design_context` with the same nodeId and client parameters, plus `artifactType` set appropriately (e.g. `WEB_PAGE_OR_APP_SCREEN` for full pages, `COMPONENT_WITHIN_A_WEB_PAGE_OR_APP_SCREEN` for sections).
-4. **If the output is too large**, use `get_metadata` first to get the node tree, then call `get_design_context` on specific child nodes.
+- **A Figma URL** — Use the Figma MCP tools (`get_screenshot`, `get_design_context`, `get_metadata`) to fetch the design specs, node structure, and image assets directly from Figma.
+- **A file path to a design context markdown file** — Read the file, which contains pre-exported Figma MCP output with the same information: node structure, design specs, typography, colors, and image asset paths.
 
-If no Figma URL is provided, ask the user for one or check if pre-exported context files exist in `figma2code-workshop/figma-context/`.
+Either way, proceed to Step 2 with the design information you received.
 
 ### Step 2 — Map Design Elements to Components
 
@@ -27,7 +25,7 @@ Analyze the Figma design output and map every visual element to the design syste
 
 ### Step 3 — Generate Code
 
-Generate Angular code following the project conventions described below. Always create complete, buildable files.
+Convert the design context into Angular code following the project conventions below. The MCP output is React+Tailwind — you must convert it to Angular templates + SCSS using the design system components and tokens. Always create complete, buildable files.
 
 ## Project Architecture
 
