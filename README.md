@@ -23,3 +23,7 @@ Abre `http://localhost:4200/` no browser.
 ```bash
 npx ng build
 ```
+
+## Figma
+
+Abre o link `https://www.figma.com/design/fCPnZSMZKrypLopv3OuHyH/Sem-t%C3%ADtulo?node-id=0-1&t=dcc1dA7v4AyLWPy0-1`
