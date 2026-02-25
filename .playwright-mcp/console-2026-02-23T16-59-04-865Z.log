@@ -1,7 +1,0 @@
-[     180ms] [WARNING] NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were: 
-key "Skateboard Shoe" at index "1" and "2", 
-key "Skateboard Shoe" at index "2" and "3". Find more at https://v20.angular.dev/errors/NG0955 @ http://localhost:4200/@fs/Users/dmelosch/Desktop/Projects/codefast/figma2code-workshop/.angular/cache/20.3.16/figma2code-workshop/vite/deps/chunk-AEMIX5HZ.js?v=de28ed0e:20626
-[   18122ms] [ERROR] WebSocket connection to 'ws://localhost:4200/?token=bvxfBcTZP4vq' failed:  @ http://localhost:4200/@vite/client:744
-[   21398ms] [WARNING] NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were: 
-key "Skateboard Shoe" at index "1" and "2", 
-key "Skateboard Shoe" at index "2" and "3". Find more at https://v20.angular.dev/errors/NG0955 @ http://localhost:4200/@fs/Users/dmelosch/Desktop/Projects/codefast/figma2code-workshop/.angular/cache/20.3.16/figma2code-workshop/vite/deps/chunk-AEMIX5HZ.js?v=d3cafbc3:20626
